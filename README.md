@@ -1,2 +1,1 @@
-# My webpage: https://mikewangspace.github.io
-- About me & my hobbies
+https://mikewangspace.github.io
