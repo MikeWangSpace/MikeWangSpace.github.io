@@ -1,33 +1,43 @@
 <!DOCTYPE html> <!-- describ the document type -->
-
 <html>
     <head>
         <meta charset="UTF-8">
-        <meta name="description" content="This website is about hobbies, reading, coding, etc.">
+        <meta name="description" content="This website is about my hobbies & learnings">
         <meta name="author" content="Mike Wang">
-        <meta name="keywords" content="table tennis, knowledge, notes, music, animation, coding">
+        <meta name="keywords" content="table tennis, knowledge sharing, ">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+          h1 {
+            text-align: center;
+            color: navy;
+          }
+          h2 {
+            text-align: left;
+            color: blue;
+          }
+          nav {
+            text-align: center;
+            font-size: 18px;
+          }
+          p {
+            text-align: center;
+            font-size: 18px;
+            color: grey
+          }
+        </style>
         <title>MikeWangSpace</title>
     </head>
 
     <body style = "background-color:ivory">
         <header>
             <nav>
-                <h1 style="color:navy"><center>MikeWangSpace</center></h1>
+                <h1>MikeWangSpace</h1><br><br>
 
-                <br>
-                <br>
-
-                <center>
-                <a href="index.html">Overview</a> |
-                <a href="TableTennis.html">Table tennis</a> |
-                Simulation |
-                Music Composition |
-                Animation Production |
-                Browser game |
-                Science |
-                Math
-                </center>
+                <nav>
+                <a href="#TableTennis">Table tennis</a> |
+                <a href="#Game">Browser game</a> |
+                <a href="#Funny">Funny</a>
+                </nav>
 
                 <br/>
             </nav>
@@ -36,38 +46,50 @@
         <main>
             <section>
                 <hr/>
-                
-                <p>Hi there, this is <b>Mike</b> :D</p>
-                <p style="color:OrangeRed">Glad you found me here!</p>
-                <p>This website is hosted by <b>GitHub</b>, which is created to share my <span style="color:teal;background-color:yellow">experience & knowledge</span> on the following areas:</p>
-                
-                <hr/>
-                <br/>
+                <p>Hi there, glad you found my website :D</p>
+                <p>Here you can check my experience & thoughts on table tennis and more...</p>
+                <hr>
+                <br>
 
-                <ol style="A">
-                    <a href="TableTennis.html" target="_blank">
-                    <li><big>Table Tennis</big></li>
-                    <img src="img/20210703-2.png" width=300>
-                    </a>
-                    <li><big>Simulation</big></li>
-                    <li><big>Music Composition</big></li>
-                    <li><big>Animation Production</big></li>
-                    <li><big>Browser game</big></li>
-                    <img src="img/20210526-1.gif" width=200>
-                    <li><big>Science</big> (e.g., 2H<sub>2</sub> + O<sub>2</sub> = 2H<sub>2</sub>O)</li>
-                    <li><big>Math</big> (e.g., y = x<sup>2</sup>)</li>
-                    <li><big>Other hobbies...</big></li>
+                <ul>
+                    <a id="TableTennis"></a>
+                    <li><h2>Table Tennis</h2></li>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Ofq4vX034iA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/WfVVT-R8vpg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <a id="Game"></a>
+                    <li><h2>Browser game</h2></li>
+                    Click image to start the game :)<br><br>
+                    <a href="Game/Tetris.html"><img src="img/20210526-1.gif" width=200></a>
+                    <a id="Funny"></a>
+                    <li><h2>Funny</h2></li>
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/fpnqW_kAmQI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </ol>
+                </ul>
             </section>
         </main>
-        
+
         <hr>
-        
+
         <footer>
-            <center><a href="https://www.google.com" target="_blank"><h3>Google</h3></a></center>
-            <center><a href="https://github.com/" target="_blank"><h3>GitHub</h3></a></center>
-            <center><h4>- End -</h4></center>
+          <center>
+            <a href="https://www.youtube.com/channel/UCu2gVx4St9nQ83Mo7Ko1lpg/videos"><img src="img/Logo_YouTube.png" width="100"></a>
+          </center><br><br>
+
+          <center>
+            Leave a message here (submitted by email):<br>
+            <textarea id="userMessage" rows="10" cols="50"></textarea><br>
+            <button onclick="sendEmail()" onsubmit="return false;">Submit</button>
+          </center>
+          <script>
+            function sendEmail() {
+                var link = "mailto:MikeWangSpace@outlook.com"
+                         + "?cc="
+                         + "&subject=" + encodeURIComponent("Message on MikeWangSpace")
+                         + "&body=" + encodeURIComponent(document.getElementById('userMessage').value)
+                ;
+
+                window.location.href = link;
+            }
+          </script>
         </footer>
     </body>
 </html>
