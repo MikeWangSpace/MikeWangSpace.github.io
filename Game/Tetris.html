@@ -1,90 +1,23 @@
 <!DOCTYPE html>
-<html lang='zh'>
+<html lang='en'>
 
 <head>
     <meta charset='UTF-8'>
     <style>
         canvas {
             position: absolute;
-            top: 50%;
+            top: 45%;
             left: 50%;
-            width: 740px;
+            width: 640px;
             height: 640px;
-            margin: -320px 0 0 -365px;
+            margin: -320px 0 0 -320px;
         }
     </style>
 </head>
 
 <body>
     <canvas></canvas>
-
-
-    <!--Add arrow buttons for control-->
-    <style>
-      .button {
-        background-color: grey;
-        border: 1px solid black;
-        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-        color: white;
-        padding: 15px 32px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 38px;
-        margin: 4px 2px;
-        cursor: pointer;
-      }
-    </style>
-    <br><br>
-    <button id="startButton" style="margin:10px 0 0 100px" class="button">开始</button><br><br>
-    <span style="margin:90px">Keyboard (arrow keys) usable</span>
-
-    <br>
-    <audio controls autoplay loop><source src="../audio/Tetris_bgm.mp3" type="audio/mpeg"></audio>
-    <br><br>
-
-    <button id="LeftButton" style="margin:0 0 0 100px" class="button">左移</button>
-    <button id="RightButton" style="float:right; margin:0 100px 0 0" class="button">右移</button>
-    <br><br><br><br><br><br>
-    <button id="UpButton" style="margin:0 0 0 100px" class="button">旋转</button>
-    <button id="DownButton" style="float:right; margin:0 100px 0 0" class="button">下降</button>
-
     <script>
-
-      var clickStartButton = document.getElementById("startButton");
-      clickStartButton.addEventListener("click", function(event){
-          startNewGame();
-      });
-
-      var clickUpButton = document.getElementById("UpButton");
-      clickUpButton.addEventListener("click", function(event){
-        if (canRotate(fallingShape))
-            rotate(fallingShape);
-      });
-
-      var clickDownButton = document.getElementById("DownButton");
-      clickDownButton.addEventListener("click", function(event){
-        while (canMove(fallingShape, down))
-            move(down);
-      });
-
-      var clickLeftButton = document.getElementById("LeftButton");
-      clickLeftButton.addEventListener("click", function(event){
-        if (canMove(fallingShape, left))
-            move(left);
-      });
-
-      var clickRightButton = document.getElementById("RightButton");
-      clickRightButton.addEventListener("click", function(event){
-        if (canMove(fallingShape, right))
-            move(right);
-      });
-
-    </script>
-
-
-
-    <script> // Original codes
         'use strict';
         var canvas = document.querySelector('canvas');
         canvas.width = 640;
@@ -109,19 +42,19 @@
         var leftMargin = 20;
         var scoreX = 400;
         var scoreY = 330;
-        var titleX = 60;
+        var titleX = 130;
         var titleY = 160;
-        var clickX = 135;
-        var clickY = 405;
+        var clickX = 120;
+        var clickY = 400;
         var previewCenterX = 467;
         var previewCenterY = 97;
-        var mainFont = 'bold 56px monospace';
-        var smallFont = 'bold 30px monospace';
+        var mainFont = 'bold 48px monospace';
+        var smallFont = 'bold 18px monospace';
         var colors = ['green', 'red', 'blue', 'purple', 'orange', 'blueviolet', 'magenta'];
         var gridRect = { x: 46, y: 47, w: 308, h: 517 };
         var previewRect = { x: 387, y: 47, w: 200, h: 200 };
-        var titleRect = { x: 50, y: 95, w: 300, h: 100 };
-        var clickRect = { x: 50, y: 375, w: 300, h: 40 };
+        var titleRect = { x: 100, y: 95, w: 252, h: 100 };
+        var clickRect = { x: 50, y: 375, w: 252, h: 40 };
         var outerRect = { x: 5, y: 5, w: 630, h: 630 };
         var squareBorder = 'white';
         var titlebgColor = 'white';
@@ -182,6 +115,10 @@
                 }
                 draw();
             }
+        });
+
+        addEventListener('click', function () {
+            startNewGame();
         });
 
         addEventListener('keyup', function () {
@@ -433,12 +370,13 @@
             g.font = mainFont;
 
             fillRect(titleRect, titlebgColor);
-
+            fillRect(clickRect, titlebgColor);
 
             g.fillStyle = textColor;
-            g.fillText('俄罗斯方块', titleX, titleY);
+            g.fillText('Tetris', titleX, titleY);
 
-
+            g.font = smallFont;
+            g.fillText('click to start', clickX, clickY);
         }
 
         function fillRect(r, color) {
@@ -485,10 +423,10 @@
             // scoreboard
             g.fillStyle = textColor;
             g.font = smallFont;
-            g.fillText('记录    ' + scoreboard.getTopscore(), scoreX+10, scoreY-30);
-            g.fillText('等级    ' + scoreboard.getLevel(), scoreX+10, scoreY);
-            g.fillText('行数    ' + scoreboard.getLines(), scoreX+10, scoreY+60);
-            g.fillText('得分    ' + scoreboard.getScore(), scoreX+10, scoreY+90);
+            g.fillText('hiscore    ' + scoreboard.getTopscore(), scoreX, scoreY);
+            g.fillText('level      ' + scoreboard.getLevel(), scoreX, scoreY + 30);
+            g.fillText('lines      ' + scoreboard.getLines(), scoreX, scoreY + 60);
+            g.fillText('score      ' + scoreboard.getScore(), scoreX, scoreY + 90);
 
             // preview
             var minX = 5, minY = 5, maxX = 0, maxY = 0;
@@ -572,6 +510,7 @@
 
         init();
     </script>
+
 </body>
 
 </html>
