@@ -1,95 +1,87 @@
-<!DOCTYPE html> <!-- describ the document type -->
+<!DOCTYPE html>
 <html>
+<!- head ->
     <head>
-        <meta charset="UTF-8">
-        <meta name="description" content="This website is about my hobbies & learnings">
-        <meta name="author" content="Mike Wang">
-        <meta name="keywords" content="table tennis, knowledge sharing, ">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <style>
-          h1 {
-            text-align: center;
-            color: navy;
-          }
-          h2 {
-            text-align: left;
-            color: blue;
-          }
-          nav {
-            text-align: center;
-            font-size: 18px;
-          }
-          p {
-            text-align: center;
-            font-size: 18px;
-            color: grey
-          }
-        </style>
-        <title>MikeWangSpace</title>
+      <meta charset="UTF-8">
+      <meta name="description" content="">
+      <meta name="author" content="Mike Wang">
+      <meta name="keywords" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="doc/style_light.css">
+      <title>MikeWangSpace</title>
     </head>
 
-    <body style = "background-color:">
-        <header>
-            <nav>
-                <h1>MikeWangSpace</h1><br><br>
+<!- body ->
+    <body>
+      <a id="TOP"></a>
+      <!- Title ->
+      <br><h1>MikeWangSpace</h1>
+      <p>Learning...</p>
 
-                <nav>
-                <a href="#TableTennis">Table tennis</a> |
-                <a href="#Game">Browser game</a> |
-                <a href="#Diverting">Diverting</a>
-                </nav>
+      <!- TOC ->
+      <br><hr>
+      <nav>
+        <center>
+          <a href="#MaterialsScience">Materials Science</a> |
+          <a href="#MaterialsInformatics">Materials Informatics</a> |
+          <a href="#Physics">Physics</a> |
+          <a href="#Programing">Programing</a> |
+      </center>
+      </nav>
+      <hr><br>
 
-                <br/>
-            </nav>
-        </header>
-
-        <main>
-            <section>
-                <hr/>
-                <p>Hi there, welcome to my website :D</p>
-                <p>Here you can find my table-tennis videos, browser game and more...</p>
-                <hr>
-                <br>
-
-                <ul>
-                    <a id="TableTennis"></a>
-                    <li><h2>Table Tennis</h2></li>
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Ofq4vX034iA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/WfVVT-R8vpg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <a id="Game"></a>
-                    <li><h2>Browser game</h2></li>
-                    Click image to start the game :)<br><br>
-                    <a href="Game/Tetris.html"><img src="img/20210526-1.gif" width=200></a>
-                    <a id="Diverting"></a>
-                    <li><h2>Diverting</h2></li>
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/fpnqW_kAmQI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </ul>
-            </section>
-        </main>
-
-        <hr>
-
-        <footer>
-          <center>
-            <a href="https://www.youtube.com/channel/UCu2gVx4St9nQ83Mo7Ko1lpg/videos"><img src="img/Logo_YouTube.png" width="100"></a>
-          </center><br><br>
-
-          <center>
-            Leave a message here (submitted by email):<br>
-            <textarea id="userMessage" rows="10" cols="50"></textarea><br>
-            <button onclick="sendEmail()" onsubmit="return false;">Submit</button>
-          </center>
-          <script>
-            function sendEmail() {
-                var link = "mailto:MikeWangSpace@outlook.com"
-                         + "?cc="
-                         + "&subject=" + encodeURIComponent("Message to MikeWangSpace")
-                         + "&body=" + encodeURIComponent(document.getElementById('userMessage').value)
-                ;
-
-                window.location.href = link;
-            }
-          </script>
-        </footer>
+      <!- Section ->
+      <div>
+        <a id="Chemistry"></a>
+        <h2>Organic chemistry</h2>
+            <h3>General</h3>
+            <b><a href="https://www2.chemistry.msu.edu/faculty/reusch/VirtTxtJml/intro1.htm" target="_blank">Virtual Textbook of Organic Chemistry</a> (open access)</b>
+            <center><img src="" width=""></center>
+      </div>
+        
+      <div>
+        <a id="MaterialsScience"></a>
+        <h2>Materials Science</h2>
+            <h3></h3>
+            <b><a href="https://www.youtube.com/playlist?list=PLL0SWcFqypCm4xCn64xO7RS62PPzy-oP8" target="_blank">Introduction to Materials Science & Engineering 2020 - Taylor Sparks</a></b>
+            <center><img src="" width=""></center>
+      </div>
+        
+      <div>
+        <a id="MaterialsInformatics"></a>
+        <h2>Materials Informatics</h2>
+            <h3></h3>
+            <b><a href="https://www.youtube.com/playlist?list=PLL0SWcFqypCl4lrzk1dMWwTUrzQZFt7y0" target="_blank">Materials Informatics - Taylor Sparks</a></b>
+            <center><img src="" width=""></center>
+      </div>
+        
+      <div>
+        <a id="Physics"></a>
+        <h2>Physics</h2>
+            <h3>General</h3>
+            <b><a href="https://www.feynmanlectures.caltech.edu/index.html" target="_blank">Feynman's letctures on Physics - Caltech</a> (open access)</b>
+            <center><img src="" width=""></center>
+      </div>
+        
+      <div>
+        <a id="Programing"></a>
+        <h2>Programing</h2>
+            <h3>HTML</h3>
+            <b><a href="https://www.youtube.com/watch?v=pQN-pnXPaVg" target="_blank">HTML Full Course - Build a Website Tutorial</a></b>
+          
+            <h3>Python</h3>
+            <b><a href="https://automatetheboringstuff.com/" target="_blank">Automate the Boring Stuff with Python - Al Sweigart</a> (open access)</b>
+          
+            <h3>Web</h3>
+            <b><a href="https://www.youtube.com/playlist?list=PLhQjrBD2T380xvFSUmToMMzERZ3qB5Ueu" target="_blank">CS50's Web Programming with Python and JavaScript 2020</a></b>
+            <center><img src="" width=""></center>
+      </div>
     </body>
+
+<!- footer ->
+    <footer>
+      <div style="background-color:DarkCyan">
+        <center><h3><a href="#TOP">TOP</a></h3></center>
+      </div>
+    </footer>
 </html>
